@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Orang {
     private String _nik;
@@ -60,5 +61,19 @@ public class Orang {
 
     public void setTelp(String telp) {
         _telp = telp;
+    }
+
+    void tampil() {
+        System.out.print(
+                String.format("%s\t%s\t%s\t%s\t%s", this._nik, this._nama, this._jk, this._alamat, this._telp));
+    }
+
+    static String getUserInput(String text) {
+        @SuppressWarnings("resource") // suppressing warning from "scanner resource leaks"
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(text);
+        String input = scanner.nextLine();
+        // scanner.close();
+        return input;
     }
 }
